@@ -123,23 +123,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\BugerPetitChiennasse\timer.h" />
-    <ClInclude Include="..\..\..\..\BugerPetitChiennasse\XController.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Movement.h" />
+    <ClInclude Include="timer.h" />
     <ClInclude Include="Tool.h" />
+    <ClInclude Include="XController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\BugerPetitChiennasse\timer.cpp" />
-    <ClCompile Include="..\..\..\..\BugerPetitChiennasse\XController.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="DummyKong.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Movement.cpp" />
+    <ClCompile Include="timer.cpp" />
     <ClCompile Include="Tool.cpp" />
+    <ClCompile Include="XController.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
