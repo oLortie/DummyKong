@@ -7,15 +7,15 @@ Description : Implémentation des méthodes de la classe Character
 
 #include "Character.h"
 
-Character::Character()
-{
 
-}
 Character::Character(int positionX, int positionY)
 {
 	position.x = positionX;
 	position.y = positionY;
+	jumping = false;
+	falling = false;
 }
+
 Character::~Character()
 {
 
@@ -54,7 +54,8 @@ void Character::setName(string newName)
 
 bool Character::jump()
 {
-	position.y--;
+	jumping = true;
+
 	return true;
 }
 
@@ -77,11 +78,38 @@ bool Character::backward()
 
 bool Character::climb()
 {
+	position.y--;
 	return true;
 }
 
-bool hit()
+bool Character::fall()
+{
+	position.y++;
+	return true;
+}
+
+bool Character::hit()
 {
 	return true;
+}
+
+bool Character::isJumping()
+{
+	return jumping;
+}
+
+bool Character::isFalling()
+{
+	return falling;
+}
+
+void Character::goUp()
+{
+	position.y--;
+}
+
+void Character::goDown()
+{
+	position.y++;
 }
 

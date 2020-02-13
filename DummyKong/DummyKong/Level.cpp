@@ -72,3 +72,8 @@ void Level::update()
 		cout << endl;
 	}
 }
+
+int Level::getMap(int i, int j)
+{
+	return map[i][j];
+}

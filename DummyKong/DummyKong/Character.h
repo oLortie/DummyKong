@@ -7,6 +7,9 @@ Description : Déclaration de la classe Character
 
 #pragma once
 #include <string>
+#include "Level.h"
+#define G 3
+#include "timer.h"
 
 using namespace std;
 
@@ -23,10 +26,11 @@ private:
 	unsigned char lifeCount;
 	string name;
 	Coordonnees position;
+	bool jumping;
+	bool falling;
 
 public:
-	Character();
-	Character(int positionX, int positionY);
+	Character(int positionX = 1, int positionY = MAX_HEIGHT - 2);
 	virtual ~Character();
 	int getLifePoints();
 	void setLifePoints(int newLifePoints);
@@ -40,5 +44,10 @@ public:
 	bool backward();
 	bool climb();
 	bool hit();
+	bool fall();
+	bool isFalling();
+	bool isJumping();
+	void goUp();
+	void goDown();
 
 };

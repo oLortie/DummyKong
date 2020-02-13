@@ -30,5 +30,5 @@ public:
 	unsigned char getDifficulty();
 	void setDifficulty(unsigned char newDifficulty);
 	void update();
-	int* getMap();
+	int getMap(int i, int j);
 };

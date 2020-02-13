@@ -81,7 +81,6 @@ void XController::A_ButtonPressed()
 void XController::B_ButtonPressed()
 {
 	player.BTN_B = ((GetState().Gamepad.wButtons & XINPUT_GAMEPAD_B) != 0);
-	std::cout << player.BTN_B <<std::endl;
 }
 void XController::X_ButtonPressed()
 {

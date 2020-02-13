@@ -1,10 +1,2 @@
-﻿  Character.cpp
-  DummyKong.cpp
-  Game.cpp
-  Level.cpp
-  Movement.cpp
-  timer.cpp
-  Tool.cpp
-  XController.cpp
-  Génération de code en cours...
+﻿  Game.cpp
   DummyKong.vcxproj -> C:\Users\Olivier Lortie\Documents\UdeS-H20\Projet\DummyKong\DummyKong\Debug\DummyKong.exe
