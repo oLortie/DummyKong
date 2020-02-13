@@ -11,11 +11,16 @@ Character::Character()
 {
 
 }
-
+Character::Character(int positionX, int positionY)
+{
+	position.x = positionX;
+	position.y = positionY;
+}
 Character::~Character()
 {
 
 }
+
 
 int Character::getLifePoints()
 {
@@ -47,7 +52,36 @@ void Character::setName(string newName)
 	name = newName;
 }
 
-Movement Character::getMovement()
+bool Character::jump()
 {
-	return movement;
+	position.y--;
+	return true;
 }
+
+Coordonnees Character::getPosition()
+{
+	return position;
+}
+
+bool Character::forward()
+{
+	position.x++;
+	return true;
+}
+
+bool Character::backward()
+{
+	position.x--;
+	return true;
+}
+
+bool Character::climb()
+{
+	return true;
+}
+
+bool hit()
+{
+	return true;
+}
+

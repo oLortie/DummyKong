@@ -1,0 +1,44 @@
+Les donnees du test sont:
+Type test: 1
+Adresse switches: 8
+Retour switches: 254
+Etat switches: 254
+Adresse leds: 10
+Valeur leds: 254
+Etat leds: 254
+
+Les donnees du test sont:
+Type test: 2
+Adresse switches: 8
+Retour switches: 254
+Etat switches: 254
+Adresse leds: 10
+Valeur leds: 0
+Etat leds: 0
+
+Les donnees du test sont:
+Type test: 3
+Adresse switches: 8
+Retour switches: 254
+Etat switches: 254
+Adresse leds: 10
+Valeur leds: 127
+Etat leds: 127
+
+Les donnees du test sont:
+Type test: 1
+Adresse switches: 8
+Retour switches: 254
+Etat switches: 254
+Adresse leds: 10
+Valeur leds: 254
+Etat leds: 254
+
+Les donnees du test sont:
+Type test: 2
+Adresse switches: 8
+Retour switches: 254
+Etat switches: 254
+Adresse leds: 10
+Valeur leds: 0
+Etat leds: 0

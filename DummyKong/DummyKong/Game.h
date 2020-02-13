@@ -8,6 +8,7 @@ Description : Déclaration de la classe Game
 #pragma once
 #include "Level.h"
 #include "Character.h"
+#include "XController.h"
 
 class Game
 {
@@ -16,6 +17,7 @@ private:
 	Character mario;
 	Character dummyKong;
 	bool isPaused;
+	XController player;
 
 public:
 	Game();

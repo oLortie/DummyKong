@@ -27,6 +27,7 @@ class XController
 private:
 	Controller player;
 	XINPUT_STATE state;
+	int controllerId = -1;
 
 public:
 	XController();
@@ -43,5 +44,7 @@ public:
 	void rightTrigger();
 	void rJoyStick();
 	void lJoyStick();
+	XINPUT_STATE GetState();
 };
+std::ostream& operator<<(std::ostream &os, const struct Controller& player);
 

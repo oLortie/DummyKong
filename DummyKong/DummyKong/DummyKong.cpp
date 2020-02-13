@@ -6,18 +6,24 @@ Description : Fichier principal du jeu Dummy Kong
 */
 
 #include "Game.h"
+#include "XController.h"
+#include "timer.h"
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
-	cout << "Bienvenue sur Dummy Kong!" << endl;
-
 	Game mainGame;
 
-	mainGame.updateLevel();
+	timer t1([&]() {
+		mainGame.start();
+	}, 100);
 
+	t1.start();
+	
+	
+	std::cin.get();
 
 	return 0;
 }

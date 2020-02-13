@@ -44,3 +44,8 @@ bool Movement::hit()
 {
 	return true;
 }
+
+Coordonnees Movement::getPosition()
+{
+	return position;
+}
