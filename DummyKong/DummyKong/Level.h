@@ -15,7 +15,7 @@ using namespace std;
 #define MAX_HEIGHT 30
 #define AIR 0
 #define MAP 1
-#define CHARACTER 2
+#define ECHELLE 2
 
 class Level
 {

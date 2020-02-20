@@ -14,6 +14,7 @@ Character::Character(int positionX, int positionY)
 	position.y = positionY;
 	jumping = false;
 	falling = false;
+	jumpingState = 0;
 }
 
 Character::~Character()
@@ -54,7 +55,13 @@ void Character::setName(string newName)
 
 bool Character::jump()
 {
-	jumping = true;
+	jumpingState++;
+	position.y--;
+	if (jumpingState == 3)
+	{
+		jumpingState = 0;
+	}
+	//else jump();
 
 	return true;
 }
@@ -111,5 +118,10 @@ void Character::goUp()
 void Character::goDown()
 {
 	position.y++;
+}
+
+int Character::getJumpingState()
+{
+	return jumpingState;
 }
 

@@ -24,28 +24,47 @@ bool Game::start()
 	
 	if (player.getPlayer().LThumbStickX == -1)
 	{
-		if (level.getMap(mario.getPosition().x - 1, mario.getPosition().y) != MAP) mario.backward();
+		if (level.getMap(mario.getPosition().y, mario.getPosition().x - 1) != MAP) mario.backward();
 	}
 	if (player.getPlayer().LThumbStickX == 1)
 	{
-		if (level.getMap(mario.getPosition().x + 1, mario.getPosition().y) != MAP) mario.forward();
+		if (level.getMap(mario.getPosition().y, mario.getPosition().x + 1) != MAP) mario.forward();
 	}
 	if (player.getPlayer().LThumbStickY == 1)
 	{
-		if (level.getMap(mario.getPosition().x, mario.getPosition().y - 1) != MAP) mario.climb();
+		if (level.getMap(mario.getPosition().y, mario.getPosition().x) == ECHELLE) mario.climb();
 	}
 	if (player.getPlayer().LThumbStickY == -1)
 	{
-		if (level.getMap(mario.getPosition().x, mario.getPosition().y + 1) != MAP) mario.fall();
+		if (level.getMap(mario.getPosition().y + 1, mario.getPosition().x) == ECHELLE) mario.fall();
 	}
+	if (mario.getJumpingState() == 0 && level.getMap(mario.getPosition().y+1, mario.getPosition().x) == AIR) mario.fall();
 
+	if (player.getPlayer().BTN_A == 1)
+	{
+		if (mario.getJumpingState() == 0 && level.getMap(mario.getPosition().y + 1, mario.getPosition().x) == MAP) mario.jump();
+	}
+	if (mario.getJumpingState() != 0) mario.jump();
 	for (int i = 0; i < MAX_HEIGHT; i++)
 	{
 		for (int j = 0; j < MAX_WIDTH; j++)
 		{
-			if (i == mario.getPosition().y && j == mario.getPosition().x) cout << "x";
-			else if (level.getMap(i, j) == AIR) cout << " ";
-			else if (level.getMap(i, j) == MAP) cout << "#";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
+			if (i == mario.getPosition().y && j == mario.getPosition().x) cout << "M";
+			else if (level.getMap(i, j) == AIR)
+			{
+				cout << " ";
+			}
+			else if (level.getMap(i, j) == MAP)
+			{
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 6);
+				cout << "#";
+			}
+			else if (level.getMap(i, j) == ECHELLE)
+			{
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
+				cout << "H";
+			}
 		}
 		cout << endl;
 	}

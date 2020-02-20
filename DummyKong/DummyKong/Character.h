@@ -28,6 +28,7 @@ private:
 	Coordonnees position;
 	bool jumping;
 	bool falling;
+	int jumpingState;
 
 public:
 	Character(int positionX = 1, int positionY = MAX_HEIGHT - 2);
@@ -49,5 +50,6 @@ public:
 	bool isJumping();
 	void goUp();
 	void goDown();
+	int getJumpingState();
 
 };

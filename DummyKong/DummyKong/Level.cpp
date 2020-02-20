@@ -18,8 +18,13 @@ Level::Level(int level)
 		{
 			for (int j = 0; j < MAX_WIDTH; j++)
 			{
+				if (i == MAX_HEIGHT - 10) map[i][j] = MAP;
 				if (i == 0 || i == MAX_HEIGHT - 1 || j == 0 || j == MAX_WIDTH - 1) map[i][j] = MAP;
 			}
+		}
+		for (int k = MAX_HEIGHT - 2; k >= MAX_HEIGHT - 10; k--)
+		{
+			map[k][MAX_WIDTH - 10] = ECHELLE;
 		}
 		break;
 	case 2:
@@ -62,7 +67,7 @@ void Level::update()
 			case MAP:
 				cout << "#";
 				break;
-			case CHARACTER:
+			case ECHELLE:
 				cout << "1";
 				break;
 			default:
