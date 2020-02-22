@@ -23,8 +23,9 @@ public:
 	Game();
 	virtual ~Game();
 	bool start();
+	bool refresh();
 	bool pause();
 	Character getMario();
 	Character getDummyKong();
-	void updateLevel();
+	void showLevel();
 };

@@ -10,6 +10,7 @@ Description : Implémentation des méthodes de la classe Level
 Level::Level(int level)
 {
 	index = level;
+	complete = false;
 
 	switch (index)
 	{
@@ -26,6 +27,7 @@ Level::Level(int level)
 		{
 			map[k][MAX_WIDTH - 10] = ECHELLE;
 		}
+		map[MAX_HEIGHT - 11][1] = PEACH;
 		break;
 	case 2:
 		break;
@@ -81,4 +83,23 @@ void Level::update()
 int Level::getMap(int i, int j)
 {
 	return map[i][j];
+}
+
+bool Level::isComplete()
+{
+	return complete;
+}
+
+void Level::completeLevel()
+{
+	complete = true;
+}
+
+bool Level::checkAroundPlayer(int x, int y, int check)
+{
+	if (map[y + 1][x] == check) return true;
+	if (map[y - 1][x] == check) return true;
+	if (map[y][x + 1] == check) return true;
+	if (map[y][x - 1] == check) return true;
+	return false;
 }

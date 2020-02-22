@@ -23,7 +23,7 @@ class Character
 {
 private:
 	int lifePoints;
-	unsigned char lifeCount;
+	int lifeCount;
 	string name;
 	Coordonnees position;
 	bool jumping;
@@ -35,8 +35,8 @@ public:
 	virtual ~Character();
 	int getLifePoints();
 	void setLifePoints(int newLifePoints);
-	unsigned char getLifeCount();
-	void setLifeCount(unsigned char newLifeCount);
+	int getLifeCount();
+	void setLifeCount(int newLifeCount);
 	string getName();
 	void setName(string newName);
 	bool jump();
@@ -51,5 +51,7 @@ public:
 	void goUp();
 	void goDown();
 	int getJumpingState();
+	void takeDamage(int dmg);
+	void gainLifePoints(int lifePts);
 
 };

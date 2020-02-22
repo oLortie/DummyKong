@@ -15,6 +15,8 @@ Character::Character(int positionX, int positionY)
 	jumping = false;
 	falling = false;
 	jumpingState = 0;
+	lifePoints = 100;
+	lifeCount = 5;
 }
 
 Character::~Character()
@@ -33,12 +35,12 @@ void Character::setLifePoints(int newLifePoints)
 	lifePoints = newLifePoints;
 }
 
-unsigned char Character::getLifeCount()
+int Character::getLifeCount()
 {
 	return lifeCount;
 }
 
-void Character::setLifeCount(unsigned char newLifeCount)
+void Character::setLifeCount(int newLifeCount)
 {
 	lifeCount = newLifeCount;
 }
@@ -123,5 +125,21 @@ void Character::goDown()
 int Character::getJumpingState()
 {
 	return jumpingState;
+}
+
+void Character::takeDamage(int dmg)
+{
+	lifePoints -= dmg;
+	if (lifePoints < 0) lifePoints = 0;
+	if (lifePoints == 0 && lifeCount > 0)
+	{
+		lifeCount--;
+		lifePoints = 100;
+	}
+}
+
+void Character::gainLifePoints(int lifePts)
+{
+	if (lifePoints + lifePts <= 100) lifePoints += lifePts;
 }
 
