@@ -17,6 +17,7 @@ Character::Character(int positionX, int positionY)
 	jumpingState = 0;
 	lifePoints = 100;
 	lifeCount = 5;
+	hammer = nullptr;
 }
 
 Character::~Character()
@@ -143,3 +144,7 @@ void Character::gainLifePoints(int lifePts)
 	if (lifePoints + lifePts <= 100) lifePoints += lifePts;
 }
 
+void Character::attachHammer(Hammer *gameHammer) {
+	gameHammer->attach();
+	hammer = gameHammer;
+}

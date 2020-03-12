@@ -9,6 +9,7 @@ Description : Implémentation des méthodes de la classe Level
 
 Level::Level(int level)
 {
+	hammer = new Hammer(10, MAX_HEIGHT - 2);
 	index = level;
 	complete = false;
 
@@ -27,6 +28,7 @@ Level::Level(int level)
 		{
 			map[k][MAX_WIDTH - 10] = ECHELLE;
 		}
+		map[hammer->getPosition().y][hammer->getPosition().x] = HAMMER;
 		map[MAX_HEIGHT - 11][1] = PEACH;
 		break;
 	case 2:
@@ -40,7 +42,7 @@ Level::Level(int level)
 
 Level::~Level()
 {
-
+	delete hammer;
 }
 
 unsigned char Level::getDifficulty()
@@ -51,6 +53,14 @@ unsigned char Level::getDifficulty()
 void Level::setDifficulty(unsigned char newDifficulty)
 {
 	difficulty = newDifficulty;
+}
+
+Hammer Level::getHammer() {
+	return *hammer;
+}
+
+Hammer* Level::getHammerPtr() {
+	return hammer;
 }
 
 void Level::update()

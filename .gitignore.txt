@@ -1,5 +1,5 @@
 #Ignores the ipch file
 ipch/
-.ipch
+*.ipch
 .vs/
 debug/

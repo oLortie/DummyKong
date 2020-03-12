@@ -17,11 +17,11 @@ int main()
 	Game mainGame;
 
 	timer t1([&]() {
+		
 		mainGame.refresh();
 	}, 100);
 
 	t1.start();
-	
 	
 	std::cin.get();
 

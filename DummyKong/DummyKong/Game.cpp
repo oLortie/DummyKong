@@ -7,6 +7,34 @@ Description : Implémentation des méthodes de la classe Game
 
 #include "Game.h"
 
+//	DEFINITION OF GAME MODE: (XBOX CONTROLLER OR KEYBOARD)
+/*
+#define MOVE_LEFT player.getPlayer().LThumbStickX
+#define MOVE_RIGHT player.getPlayer().LThumbStickX
+#define MOVE_UP player.getPlayer().LThumbStickY
+#define MOVE_DOWN player.getPlayer().LThumbStickY
+#define JUMP player.getPlayer().BTN_A
+*/
+#define MOVE_LEFT KeyboardPress('A')
+#define MOVE_RIGHT KeyboardPress('D')
+#define MOVE_UP KeyboardPress('W')
+#define MOVE_DOWN KeyboardPress('S')
+#define JUMP KeyboardPress(' ')
+
+
+int KeyboardPress(char ch) {
+	if (GetAsyncKeyState(ch)) {
+		if (ch == 'A' || ch == 'S') {
+			return -1;
+		}
+		else {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+
 Game::Game()
 {
 	player.getUserInput();
@@ -42,8 +70,8 @@ bool Game::refresh()
 		cout << "==============================" << endl;
 		cout << "PAUSE MENU" << endl;
 		cout << "==============================" << endl;
-		cout << "A - Reprendre" << endl;
-		cout << "B - Quitter" << endl;
+		cout << "A/Enter - Reprendre" << endl;
+		cout << "B/Esc - Quitter" << endl;
 		cout << "==============================" << endl;
 
 		if (player.getPlayer().BTN_A == 1)
@@ -71,6 +99,10 @@ bool Game::refresh()
 			exit(EXIT_SUCCESS);
 		}
 	}
+	// VOIR POUR DE LA SURCHARGE D'OPERATEURS
+	else if (mario.getPosition().x == level.getHammer().getPosition().x && mario.getPosition().y == level.getHammer().getPosition().y && !level.getHammer().isAttached()) {
+		mario.attachHammer(level.getHammerPtr());
+	}
 	else
 	{
 		// jeu
@@ -86,25 +118,25 @@ bool Game::refresh()
 		{
 			mario.gainLifePoints(10);
 		}
-		if (player.getPlayer().LThumbStickX == -1)
+		if (MOVE_LEFT == -1)
 		{
 			if (level.getMap(mario.getPosition().y, mario.getPosition().x - 1) != MAP) mario.backward();
 		}
-		if (player.getPlayer().LThumbStickX == 1)
+		if (MOVE_RIGHT == 1)
 		{
 			if (level.getMap(mario.getPosition().y, mario.getPosition().x + 1) != MAP) mario.forward();
 		}
-		if (player.getPlayer().LThumbStickY == 1)
+		if (MOVE_UP == 1)
 		{
 			if (level.getMap(mario.getPosition().y, mario.getPosition().x) == ECHELLE) mario.climb();
 		}
-		if (player.getPlayer().LThumbStickY == -1)
+		if (MOVE_DOWN == -1)
 		{
 			if (level.getMap(mario.getPosition().y + 1, mario.getPosition().x) == ECHELLE) mario.fall();
 		}
 		if (mario.getJumpingState() == 0 && level.getMap(mario.getPosition().y + 1, mario.getPosition().x) == AIR) mario.fall();
 
-		if (player.getPlayer().BTN_A == 1)
+		if (JUMP == 1)
 		{
 			if (mario.getJumpingState() == 0 && level.getMap(mario.getPosition().y + 1, mario.getPosition().x) == MAP) mario.jump();
 		}
@@ -167,6 +199,13 @@ void Game::showLevel()
 			{
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
 				cout << "P";
+			}
+			else if (level.getMap(i, j) == HAMMER && !level.getHammer().isAttached()) {
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
+				cout << "T";
+			}
+			else {
+				cout << " ";	// REMPLACE LE MARTEAU PAR DE L'AIR LORSQU'IL EST RAMASSE, POURRAIT ETRE CHANGER DANS LA MAP DIRECTEMENT
 			}
 		}
 		cout << endl;

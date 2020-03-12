@@ -8,16 +8,12 @@ Description : Déclaration de la classe Character
 #pragma once
 #include <string>
 #include "Level.h"
-#define G 3
 #include "timer.h"
+#include "Hammer.h"
+
+#define G 3
 
 using namespace std;
-
-struct Coordonnees
-{
-	int x;
-	int y;
-};
 
 class Character
 {
@@ -29,29 +25,37 @@ private:
 	bool jumping;
 	bool falling;
 	int jumpingState;
+	Hammer *hammer;
 
 public:
 	Character(int positionX = 1, int positionY = MAX_HEIGHT - 2);
 	virtual ~Character();
+
 	int getLifePoints();
-	void setLifePoints(int newLifePoints);
 	int getLifeCount();
-	void setLifeCount(int newLifeCount);
 	string getName();
-	void setName(string newName);
-	bool jump();
 	Coordonnees getPosition();
+
+	void setName(string newName);
+	void setLifeCount(int newLifeCount);
+	void setLifePoints(int newLifePoints);
+
+	
 	bool forward();
 	bool backward();
 	bool climb();
 	bool hit();
+	void goUp();
+	void goDown();
+
+	bool jump();
 	bool fall();
 	bool isFalling();
 	bool isJumping();
-	void goUp();
-	void goDown();
 	int getJumpingState();
+
 	void takeDamage(int dmg);
 	void gainLifePoints(int lifePts);
+	void attachHammer(Hammer *gameHammer);
 
 };

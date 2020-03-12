@@ -6,7 +6,12 @@ Description : Déclaration de la classe Tool
 */
 
 #pragma once
-#include "Movement.h"
+
+struct Coordonnees
+{
+	int x;
+	int y;
+};
 
 class Tool
 {
@@ -16,5 +21,6 @@ public:
 	Tool();
 	virtual ~Tool();
 	Coordonnees getPosition();
+	void setPosition(int x, int y);
 	bool updatePosition();
 };
