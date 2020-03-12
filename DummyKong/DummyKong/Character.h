@@ -30,14 +30,13 @@ private:
 public:
 	Character(int positionX = 1, int positionY = MAX_HEIGHT - 2);
 	virtual ~Character();
-	int const getLifePoints();
+	int getLifePoints();
 	void setLifePoints(int newLifePoints);
-	unsigned char const getLifeCount();
-	void setLifeCount(unsigned char newLifeCount);
-	string const getName();
+	int getLifeCount();
+	void setLifeCount(int newLifeCount);
+	string getName();
 	void setName(string newName);
-	bool jump();
-	Coordonnees const getPosition();
+	Coordonnees getPosition();
 	bool forward();
 	bool backward();
 	bool climb();

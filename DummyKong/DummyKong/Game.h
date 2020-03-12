@@ -25,7 +25,7 @@ public:
 	bool start();
 	bool refresh();
 	bool pause();
-	Character const getMario();
-	Character const getDummyKong();
-	void updateLevel();
+	Character getMario();
+	Character getDummyKong();
+	void showLevel();
 };

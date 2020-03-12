@@ -35,7 +35,7 @@ public:
 	virtual ~XController();
 	void readController();
 	void updateController();
-	Controller const getPlayer();
+	Controller getPlayer();
 	void getUserInput();
 	void A_ButtonPressed();
 	void X_ButtonPressed();

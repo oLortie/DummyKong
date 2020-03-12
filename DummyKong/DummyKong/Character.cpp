@@ -9,7 +9,6 @@ Description : Impl�mentation des m�thodes de la classe Character
 
 
 Character::Character(int positionX, int positionY)
-	:m_position_x(positionX), m_position_y(positionY)
 {
 	position.x = positionX;
 	position.y = positionY;
@@ -27,7 +26,7 @@ Character::~Character()
 }
 
 
-int const Character::getLifePoints()
+int Character::getLifePoints()
 {
 	return lifePoints;
 }
@@ -37,7 +36,7 @@ void Character::setLifePoints(int newLifePoints)
 	lifePoints = newLifePoints;
 }
 
-unsigned char const Character::getLifeCount()
+int Character::getLifeCount()
 {
 	return lifeCount;
 }
@@ -47,7 +46,7 @@ void Character::setLifeCount(int newLifeCount)
 	lifeCount = newLifeCount;
 }
 
-string const Character::getName()
+string Character::getName()
 {
 	return name;
 }
@@ -70,7 +69,7 @@ bool Character::jump()
 	return true;
 }
 
-Coordonnees const Character::getPosition()
+Coordonnees Character::getPosition()
 {
 	return position;
 }

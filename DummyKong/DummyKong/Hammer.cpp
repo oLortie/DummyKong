@@ -25,5 +25,6 @@ void Hammer::attach() {
 }
 
 bool Hammer::breakBarrel() {
+
 	return true;
 }
