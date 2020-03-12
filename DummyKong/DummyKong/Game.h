@@ -24,7 +24,7 @@ public:
 	virtual ~Game();
 	bool start();
 	bool pause();
-	Character getMario();
-	Character getDummyKong();
+	Character const getMario();
+	Character const getDummyKong();
 	void updateLevel();
 };

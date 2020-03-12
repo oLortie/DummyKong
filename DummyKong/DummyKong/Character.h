@@ -1,8 +1,8 @@
 /*
-Auteur: Équipe p-02
+Auteur: ï¿½quipe p-02
 Fichier: Character.h
-Date : 9 février 2020
-Description : Déclaration de la classe Character
+Date : 9 fï¿½vrier 2020
+Description : Dï¿½claration de la classe Character
 */
 
 #pragma once
@@ -33,14 +33,14 @@ private:
 public:
 	Character(int positionX = 1, int positionY = MAX_HEIGHT - 2);
 	virtual ~Character();
-	int getLifePoints();
+	int const getLifePoints();
 	void setLifePoints(int newLifePoints);
-	unsigned char getLifeCount();
+	unsigned char const getLifeCount();
 	void setLifeCount(unsigned char newLifeCount);
-	string getName();
+	string const getName();
 	void setName(string newName);
 	bool jump();
-	Coordonnees getPosition();
+	Coordonnees const getPosition();
 	bool forward();
 	bool backward();
 	bool climb();
