@@ -17,7 +17,7 @@ int main()
 	Game mainGame;
 
 	timer t1([&]() {
-		mainGame.start();
+		mainGame.refresh();
 	}, 100);
 
 	t1.start();

@@ -16,6 +16,7 @@ using namespace std;
 #define AIR 0
 #define MAP 1
 #define ECHELLE 2
+#define PEACH 3
 
 class Level
 {
@@ -23,6 +24,7 @@ private:
 	unsigned char difficulty;
 	int map[MAX_HEIGHT][MAX_WIDTH] = { 0 };
 	int index;
+	bool complete;
 
 public:
 	Level(int level = 1);
@@ -31,4 +33,7 @@ public:
 	void setDifficulty(unsigned char newDifficulty);
 	void update();
 	int getMap(int i, int j);
+	bool isComplete();
+	void completeLevel();
+	bool checkAroundPlayer(int x, int y, int check);
 };

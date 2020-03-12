@@ -1,8 +1,8 @@
 /*
-Auteur: Équipe p-02
+Auteur: ï¿½quipe p-02
 Fichier: Character.cpp
-Date : 9 février 2020
-Description : Implémentation des méthodes de la classe Character
+Date : 9 fï¿½vrier 2020
+Description : Implï¿½mentation des mï¿½thodes de la classe Character
 */
 
 #include "Character.h"
@@ -16,6 +16,8 @@ Character::Character(int positionX, int positionY)
 	jumping = false;
 	falling = false;
 	jumpingState = 0;
+	lifePoints = 100;
+	lifeCount = 5;
 }
 
 Character::~Character()
@@ -39,7 +41,7 @@ unsigned char const Character::getLifeCount()
 	return lifeCount;
 }
 
-void Character::setLifeCount(unsigned char newLifeCount)
+void Character::setLifeCount(int newLifeCount)
 {
 	lifeCount = newLifeCount;
 }
@@ -124,5 +126,21 @@ void Character::goDown()
 int Character::getJumpingState()
 {
 	return jumpingState;
+}
+
+void Character::takeDamage(int dmg)
+{
+	lifePoints -= dmg;
+	if (lifePoints < 0) lifePoints = 0;
+	if (lifePoints == 0 && lifeCount > 0)
+	{
+		lifeCount--;
+		lifePoints = 100;
+	}
+}
+
+void Character::gainLifePoints(int lifePts)
+{
+	if (lifePoints + lifePts <= 100) lifePoints += lifePts;
 }
 

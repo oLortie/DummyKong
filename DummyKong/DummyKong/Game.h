@@ -1,8 +1,8 @@
 /*
-Auteur: Équipe p-02
+Auteur: ï¿½quipe p-02
 Fichier: Game.h
-Date : 9 février 2020
-Description : Déclaration de la classe Game
+Date : 9 fï¿½vrier 2020
+Description : Dï¿½claration de la classe Game
 */
 
 #pragma once
@@ -23,6 +23,7 @@ public:
 	Game();
 	virtual ~Game();
 	bool start();
+	bool refresh();
 	bool pause();
 	Character const getMario();
 	Character const getDummyKong();

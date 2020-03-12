@@ -1,0 +1,2 @@
+#Ignores the ipch file
+ipch/

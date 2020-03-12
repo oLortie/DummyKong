@@ -31,6 +31,7 @@ void XController::readController()
 	B_ButtonPressed();
 	X_ButtonPressed();
 	Y_ButtonPressed();
+	START_ButtonPressed();
 	leftTrigger();
 	rightTrigger();
 	rJoyStick();
@@ -89,6 +90,11 @@ void XController::X_ButtonPressed()
 void XController::Y_ButtonPressed()
 {
 	player.BTN_Y = ((GetState().Gamepad.wButtons & XINPUT_GAMEPAD_Y) != 0);
+}
+
+void XController::START_ButtonPressed()
+{
+	player.BTN_START = ((GetState().Gamepad.wButtons & XINPUT_GAMEPAD_START) != 0);
 }
 
 void XController::leftTrigger()

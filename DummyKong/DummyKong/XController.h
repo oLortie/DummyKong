@@ -17,6 +17,7 @@ struct Controller
 	bool BTN_B;
 	bool BTN_X;
 	bool BTN_Y;
+	bool BTN_START;
 	int left_Trigger;
 	int right_Trigger;
 };
@@ -40,6 +41,7 @@ public:
 	void X_ButtonPressed();
 	void B_ButtonPressed();
 	void Y_ButtonPressed();
+	void START_ButtonPressed();
 	void leftTrigger();
 	void rightTrigger();
 	void rJoyStick();
