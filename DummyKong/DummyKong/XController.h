@@ -31,11 +31,11 @@ private:
 	int controllerId = -1;
 
 public:
-	XController();
+	const XController();
 	virtual ~XController();
 	void readController();
 	void updateController();
-	Controller getPlayer();
+	Controller const getPlayer();
 	void getUserInput();
 	void A_ButtonPressed();
 	void X_ButtonPressed();

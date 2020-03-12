@@ -1,14 +1,15 @@
 /*
-Auteur: Équipe p-02
+Auteur: ï¿½quipe p-02
 Fichier: Character.cpp
-Date : 9 février 2020
-Description : Implémentation des méthodes de la classe Character
+Date : 9 fï¿½vrier 2020
+Description : Implï¿½mentation des mï¿½thodes de la classe Character
 */
 
 #include "Character.h"
 
 
 Character::Character(int positionX, int positionY)
+	:m_position_x(positionX), m_position_y(positionY)
 {
 	position.x = positionX;
 	position.y = positionY;
@@ -26,7 +27,7 @@ Character::~Character()
 }
 
 
-int Character::getLifePoints()
+int const Character::getLifePoints()
 {
 	return lifePoints;
 }
@@ -36,7 +37,7 @@ void Character::setLifePoints(int newLifePoints)
 	lifePoints = newLifePoints;
 }
 
-int Character::getLifeCount()
+unsigned char const Character::getLifeCount()
 {
 	return lifeCount;
 }
@@ -46,7 +47,7 @@ void Character::setLifeCount(int newLifeCount)
 	lifeCount = newLifeCount;
 }
 
-string Character::getName()
+string const Character::getName()
 {
 	return name;
 }
@@ -69,7 +70,7 @@ bool Character::jump()
 	return true;
 }
 
-Coordonnees Character::getPosition()
+Coordonnees const Character::getPosition()
 {
 	return position;
 }
