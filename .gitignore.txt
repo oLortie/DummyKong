@@ -1,6 +1,0 @@
-#Ignores the ipch file
-ipch/
-*.ipch
-.vs/
-debug/
-x64/
