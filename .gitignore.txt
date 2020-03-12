@@ -3,3 +3,4 @@ ipch/
 *.ipch
 .vs/
 debug/
+x64/
