@@ -131,12 +131,12 @@ bool Game::start()
 	return true;
 }
 
-Character Game::getMario()
+Character const Game::getMario()
 {
 	return mario;
 }
 
-Character Game::getDummyKong()
+Character const Game::getDummyKong()
 {
 	return dummyKong;
 }

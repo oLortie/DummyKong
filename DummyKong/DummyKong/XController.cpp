@@ -45,7 +45,7 @@ void XController::updateController()
 	std::cout << player << std::endl;
 }
 
-Controller XController::getPlayer()
+Controller const XController::getPlayer()
 {
 	return player;
 }

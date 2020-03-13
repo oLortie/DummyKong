@@ -41,7 +41,7 @@ unsigned char const Character::getLifeCount()
 	return lifeCount;
 }
 
-void Character::setLifeCount(int newLifeCount)
+void Character::setLifeCount(unsigned char newLifeCount)
 {
 	lifeCount = newLifeCount;
 }

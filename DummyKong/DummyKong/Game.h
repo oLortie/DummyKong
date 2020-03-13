@@ -10,6 +10,8 @@ Description : D�claration de la classe Game
 #include "Character.h"
 #include "XController.h"
 
+using namespace std;
+
 class Game
 {
 private:
@@ -28,4 +30,6 @@ public:
 	Character const getMario();
 	Character const getDummyKong();
 	void updateLevel();
+	void showLevel();
+
 };

@@ -26,6 +26,8 @@ private:
 	int lifeCount;
 	string name;
 	Coordonnees position;
+	int m_position_x;
+	int m_position_y;
 	bool jumping;
 	bool falling;
 	int jumpingState;
