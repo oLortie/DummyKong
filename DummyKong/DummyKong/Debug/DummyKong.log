@@ -1,5 +1,6 @@
-﻿  timer.cpp
-  Tool.cpp
-  XController.cpp
+﻿  Character.cpp
+  DK.cpp
+  DummyKong.cpp
+  Game.cpp
   Génération de code en cours...
-  DummyKong.vcxproj -> C:\Users\charl\Desktop\Projet S2\DummyKong\DummyKong\Debug\DummyKong.exe
+  DummyKong.vcxproj -> C:\Users\jeanc\source\repos\DummyKong\DummyKong\Debug\DummyKong.exe

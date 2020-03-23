@@ -10,7 +10,7 @@ Description : Déclaration de la classe Tool
 
 class Tool
 {
-private:
+protected:
 	Coordonnees position;
 public:
 	Tool();

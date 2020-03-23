@@ -29,5 +29,6 @@ public:
 	string getName();
 	void setName(string newName);
 	Movement getMovement();
+	//virtual void attack();
 
 };

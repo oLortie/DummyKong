@@ -125,6 +125,8 @@
   <ItemGroup>
     <ClInclude Include="Character.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Barrel.h" />
+    <ClInclude Include="Hammer.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Movement.h" />
     <ClInclude Include="timer.h" />
@@ -137,6 +139,8 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Movement.cpp" />
+    <ClCompile Include="Barrel.cpp" />
+    <ClCompile Include="Hammer.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="Tool.cpp" />
     <ClCompile Include="XController.cpp" />

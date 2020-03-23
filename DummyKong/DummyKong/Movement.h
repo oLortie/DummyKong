@@ -25,4 +25,5 @@ public:
 	bool backward();
 	bool climb();
 	bool hit();
+	Coordonnees getPosition();
 };
