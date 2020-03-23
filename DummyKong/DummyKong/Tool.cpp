@@ -22,6 +22,11 @@ Coordonnees Tool::getPosition()
 	return position;
 }
 
+void Tool::setPosition(int x, int y) {
+	position.x = x;
+	position.y = y;
+}
+
 bool Tool::updatePosition()
 {
 	return true;

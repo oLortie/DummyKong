@@ -36,9 +36,12 @@
     <ClInclude Include="XController.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Barrel.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+=======
+>>>>>>> master
     <ClInclude Include="Hammer.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -68,9 +71,12 @@
     <ClCompile Include="XController.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Barrel.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+=======
+>>>>>>> master
     <ClCompile Include="Hammer.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>

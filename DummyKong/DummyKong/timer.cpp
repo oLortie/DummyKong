@@ -65,3 +65,13 @@ timer * timer::setInterval(const long &interval)
 	m_interval = interval;
 	return this;
 }
+
+long timer::getElapsedTime()
+{
+	return elapsedTime;
+}
+
+void timer::setElapsedTime(long newElapsedTime)
+{
+	elapsedTime = newElapsedTime;
+}

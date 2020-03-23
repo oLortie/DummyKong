@@ -1,0 +1,15 @@
+
+ipch/
+*.ipch
+
+DummyKong/.vs/DummyKong/v15/
+
+DummyKong/DummyKong/x64/Debug/
+
+DummyKong/x64/Debug/
+
+.vs/
+x64/
+*.log
+
+DummyKong/DummyKong/Debug/

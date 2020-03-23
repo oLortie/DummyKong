@@ -1,13 +1,14 @@
 /*
-Auteur: Équipe p-02
+Auteur: ï¿½quipe p-02
 Fichier: Game.h
-Date : 9 février 2020
-Description : Déclaration de la classe Game
+Date : 9 fï¿½vrier 2020
+Description : Dï¿½claration de la classe Game
 */
 
 #pragma once
 #include "Level.h"
 #include "Character.h"
+#include "XController.h"
 
 class Game
 {
@@ -16,13 +17,15 @@ private:
 	Character mario;
 	Character dummyKong;
 	bool isPaused;
+	XController player;
 
 public:
 	Game();
 	virtual ~Game();
 	bool start();
+	bool refresh();
 	bool pause();
 	Character getMario();
 	Character getDummyKong();
-	void updateLevel();
+	void showLevel();
 };

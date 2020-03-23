@@ -1,8 +1,8 @@
 /*
-Auteur: Équipe p-02
+Auteur: ï¿½quipe p-02
 Fichier: Movement.cpp
-Date : 9 février 2020
-Description : Implémentation des méthodes de la classe Movement
+Date : 9 fï¿½vrier 2020
+Description : Implï¿½mentation des mï¿½thodes de la classe Movement
 */
 
 #include "Movement.h"

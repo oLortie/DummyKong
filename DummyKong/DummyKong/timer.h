@@ -3,6 +3,7 @@
 #include <chrono>
 #include <thread>
 #include <iostream>
+#include <functional>
 
 
 class timer
@@ -19,6 +20,8 @@ class timer
 		timer *setFunc(std::function<void(void)> func);
 		long getInterval();
 		timer *setInterval(const long &interval);
+		long getElapsedTime();
+		void setElapsedTime(long newElapsedTime);
 
 	private:
 		// Function to be executed fater interval
@@ -26,5 +29,6 @@ class timer
 		long m_interval;
 		std::thread m_thread;
 		bool m_running = false;
+		long elapsedTime;
 	};
 

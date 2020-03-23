@@ -7,7 +7,8 @@ Description : Déclaration de la classe Movement
 
 #pragma once
 
-struct Coordonnees {
+struct Coordonnees
+{
 	int x;
 	int y;
 };
@@ -21,6 +22,7 @@ public:
 	Movement();
 	virtual ~Movement();
 	bool jump();
+	Coordonnees getPosition();
 	bool forward();
 	bool backward();
 	bool climb();

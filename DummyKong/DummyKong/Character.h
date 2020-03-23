@@ -1,13 +1,17 @@
 /*
-Auteur: Équipe p-02
+Auteur: ï¿½quipe p-02
 Fichier: Character.h
-Date : 9 février 2020
-Description : Déclaration de la classe Character
+Date : 9 fï¿½vrier 2020
+Description : Dï¿½claration de la classe Character
 */
 
 #pragma once
-#include "Movement.h"
 #include <string>
+#include "Level.h"
+#include "timer.h"
+#include "Hammer.h"
+
+#define G 3
 
 using namespace std;
 
@@ -15,20 +19,39 @@ class Character
 {
 private:
 	int lifePoints;
-	unsigned char lifeCount;
+	int lifeCount;
 	string name;
-	Movement movement;
+	Coordonnees position;
+	bool jumping;
+	bool falling;
+	int jumpingState;
+	Hammer *hammer;
 
 public:
-	Character();
+	Character(int positionX = 1, int positionY = MAX_HEIGHT - 2);
 	virtual ~Character();
 	int getLifePoints();
 	void setLifePoints(int newLifePoints);
-	unsigned char getLifeCount();
-	void setLifeCount(unsigned char newLifeCount);
+	int getLifeCount();
+	void setLifeCount(int newLifeCount);
 	string getName();
 	void setName(string newName);
-	Movement getMovement();
-	//virtual void attack();
+	Coordonnees getPosition();
+	bool forward();
+	bool backward();
+	bool climb();
+	bool hit();
+	void goUp();
+	void goDown();
+
+	bool jump();
+	bool fall();
+	bool isFalling();
+	bool isJumping();
+	int getJumpingState();
+
+	void takeDamage(int dmg);
+	void gainLifePoints(int lifePts);
+	void attachHammer(Hammer *gameHammer);
 
 };
